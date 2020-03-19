@@ -9,9 +9,10 @@ class ID extends Component {
 
       this.changeCountry = this.changeCountry.bind(this)
       this.getDataByCountry = this.getDataByCountry.bind(this)
+      this.checkCountry = this.checkCountry.bind(this)
 
       this.state = {
-        defaultCountry: "id",
+        defaultCountry: "ID",
         countries: [],
         confirmed: 0,
         recovered: 0,
@@ -64,13 +65,19 @@ class ID extends Component {
     this.getDataByCountry(event.target.value)
   }
 
+  checkCountry(country){
+    return ((country == this.state.defaultCountry) ? "selected" : "")
+  }
+
   render() {
     return (
       <div className="bg-gray-200 p-5 rounded overflow-hidden shadow-lg text-left">
         <h3>Status
         <select name="countrySelectInput" onChange={this.changeCountry}>
         {
-          Object.entries(this.state.countries).map((val) => <option value={val[1]}>{val[0]}</option>)
+          Object.entries(this.state.countries).map((val) => {
+            return (<option value={val[1]} selected={this.checkCountry(val[1])}>{val[0]}</option>)
+          })
         }
         </select>
         </h3>
