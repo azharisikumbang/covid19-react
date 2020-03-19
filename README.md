@@ -1,5 +1,5 @@
 # covid19-react
-This project is build for monitoring covid19 statistics in world an Indonesia. By accessing this web you can get information about how many poeple confirmed, recovered, and deaths by coronavirus.
+This project is build for monitoring covid19 statistics in World and Indonesia. By accessing this web you can get information about how many poeple confirmed, recovered, and deaths by coronavirus. The data source from https://covid19.mathdro.id. 
 
 You can access the web on this link https://covid19.coretanit.com
 
@@ -19,6 +19,3 @@ And now running the app
 npm start
 ```
 Now, goto web browser and open http://localhost:3000
-
-## Data Source
-Data source from https://covid19.mathdro.id
