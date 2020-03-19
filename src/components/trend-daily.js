@@ -50,8 +50,6 @@ class TrendDaily extends Component {
   async componentDidMount(){
     const idData =  await axios.get("https://corona-stats.online/id?format=json")
       .then(res => res.data[0].confirmedByDay)
-
-    console.log(idData);
     // Loading data
     axios.get("https://covid19.mathdro.id/api/daily")
       .then(res => {
