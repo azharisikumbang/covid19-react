@@ -13,25 +13,33 @@ class TrendDaily extends Component {
             {
               label: ["Seluruh Dunia"],
               fill: false,
-              pointRadius: 1,
-              borderWidth: 3,
+              borderWidth: 2,
+              pointRadius: 0,
               borderColor: '#2980b9',
               data: []
             },
             {
               label: ["China"],
               fill: false,
-              borderWidth: 3,
-              pointRadius: 1,
-              borderColor: '#e74c3c',
+              borderWidth: 2,
+              pointRadius: 0,
+              borderColor: '#2ecc71',
               data: []
             },
             {
               label: ["Lokasi Lainnya"],
               fill: false,
-              borderWidth: 3,
-              pointRadius: 1,
+              borderWidth: 2,
+              pointRadius: 0,
               borderColor: '#f1c40f',
+              data: []
+            },
+            {
+              label: ["Indonesia"],
+              fill: false,
+              borderWidth: 2,
+              pointRadius: 0,
+              borderColor: '#e74c3c',
               data: []
             }
           ]
@@ -39,7 +47,11 @@ class TrendDaily extends Component {
       }
   }
 
-  componentDidMount(){
+  async componentDidMount(){
+    const idData =  await axios.get("https://corona-stats.online/id?format=json")
+      .then(res => res.data[0].confirmedByDay)
+
+    console.log(idData);
     // Loading data
     axios.get("https://covid19.mathdro.id/api/daily")
       .then(res => {
@@ -55,8 +67,6 @@ class TrendDaily extends Component {
           chinaData.push(data.mainlandChina);
           otherData.push(data.otherLocations);
         });
-
-        console.log(newLabel);
 
         // Set Stat
         this.setState({
@@ -75,11 +85,17 @@ class TrendDaily extends Component {
               {
                 ...this.state.dataChart.datasets[2],
                 data: otherData
+              },
+              {
+                ...this.state.dataChart.datasets[3],
+                data: idData
               }
             ]
           }
         })
       })
+
+      // Getting data for Indonesia
   }
 
   render() {
@@ -96,7 +112,8 @@ class TrendDaily extends Component {
             legend: {
               display: true,
               position: 'right'
-            }
+            },
+            responsive: true
           }}
         />
       </div>
