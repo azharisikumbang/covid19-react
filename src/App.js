@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import WorldTracker from './components/world-tracker';
 import IdTracker from './components/id-tracker';
 import Idenfitier from './components/identifier';
+import TrendDaily from './components/trend-daily';
 
 
 import 'tailwindcss/dist/tailwind.min.css'
@@ -22,6 +23,7 @@ class App extends Component {
           </div>
         </div>
         <Idenfitier />
+        <TrendDaily />
       </div>
     );
   }
