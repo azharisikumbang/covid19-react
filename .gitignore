@@ -7,14 +7,7 @@
 /coverage
 
 # production
-# /build
-
-# for github pages
-/public
-/src
-package.json
-readme.md
-.gitignore
+/build
 
 # misc
 .DS_Store
