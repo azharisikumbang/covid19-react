@@ -5,6 +5,7 @@ import IdTracker from './components/id-tracker';
 import Idenfitier from './components/identifier';
 import TrendDaily from './components/trend-daily';
 
+import Countries from './components/countries';
 
 import 'tailwindcss/dist/tailwind.min.css'
 
@@ -24,6 +25,7 @@ class App extends Component {
         </div>
         <Idenfitier />
         <TrendDaily />
+        <Countries />
       </div>
     );
   }

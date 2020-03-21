@@ -14,7 +14,7 @@ class TrendDaily extends Component {
               label: ["Seluruh Dunia"],
               fill: false,
               borderWidth: 2,
-              pointRadius: 0,
+              pointRadius: 1,
               borderColor: '#2980b9',
               data: []
             },
@@ -22,24 +22,16 @@ class TrendDaily extends Component {
               label: ["China"],
               fill: false,
               borderWidth: 2,
-              pointRadius: 0,
-              borderColor: '#2ecc71',
+              pointRadius: 1,
+              borderColor: '#e53e3e',
               data: []
             },
             {
               label: ["Lokasi Lainnya"],
               fill: false,
               borderWidth: 2,
-              pointRadius: 0,
+              pointRadius: 1,
               borderColor: '#f1c40f',
-              data: []
-            },
-            {
-              label: ["Indonesia"],
-              fill: false,
-              borderWidth: 2,
-              pointRadius: 0,
-              borderColor: '#e74c3c',
               data: []
             }
           ]
@@ -48,9 +40,6 @@ class TrendDaily extends Component {
   }
 
   async componentDidMount(){
-    const idData =  await axios.get("https://corona-stats.online/id?format=json")
-      .then(res => res.data[0].confirmedByDay)
-    // Loading data
     axios.get("https://covid19.mathdro.id/api/daily")
       .then(res => {
         const worldData  = [];
@@ -83,17 +72,12 @@ class TrendDaily extends Component {
               {
                 ...this.state.dataChart.datasets[2],
                 data: otherData
-              },
-              {
-                ...this.state.dataChart.datasets[3],
-                data: idData
               }
             ]
           }
         })
       })
 
-      // Getting data for Indonesia
   }
 
   render() {
@@ -104,7 +88,7 @@ class TrendDaily extends Component {
           options={{
             title: {
               display: true,
-              text: "Tren harian perkembangan covid19",
+              text: "Tren Harian Perkembangan Covid19 Dunia",
               fontSize: 20
             },
             legend: {
