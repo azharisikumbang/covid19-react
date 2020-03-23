@@ -93,7 +93,7 @@ class TrendDaily extends Component {
             },
             legend: {
               display: true,
-              position: 'right'
+              position: 'top'
             },
             responsive: true
           }}

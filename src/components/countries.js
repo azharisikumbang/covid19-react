@@ -14,7 +14,7 @@ class Countries extends Component {
           labels: [],
           datasets: [
             {
-              label: ["Terkonfirmasi"],
+              label: ["Positif"],
               fill: false,
               borderWidth: 2,
               pointRadius: 1,
@@ -103,7 +103,7 @@ class Countries extends Component {
     let chartLabels = [];
     let chartEntries = [];
 
-    let i = 4;
+    let i = 43;
 
     if (withLabel) {
       for (i; i < data[index].length; i++) {
@@ -142,7 +142,7 @@ class Countries extends Component {
             },
             legend: {
               display: true,
-              position: 'right'
+              position: 'top'
             },
             responsive: true
           }}
