@@ -8,15 +8,12 @@ class idProvinces extends Component {
     this.state = {
       provinces: []
     }
-
-
   }
 
   componentDidMount(){
     axios.get("https://api.kawalcorona.com/indonesia/provinsi/")
     .then(res => {
       this.setState({provinces: res.data})
-      console.log(res.data);
     })
   }
 
