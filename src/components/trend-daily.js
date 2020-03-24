@@ -49,7 +49,7 @@ class TrendDaily extends Component {
         const defaultLabels = this.state.dataChart.labels;
 
         res.data.map(data => {
-          newLabel.push(data.reportDateString);
+          newLabel.push(data.reportDate);
           worldData.push(data.totalConfirmed);
           chinaData.push(data.mainlandChina);
           otherData.push(data.otherLocations);
@@ -82,7 +82,7 @@ class TrendDaily extends Component {
 
   render() {
     return (
-      <div className="h-100 w-10/12 shadow-lg mx-auto my-20 bg-white p-5 box-shadow">
+      <div className="h-100 w-full shadow-lg mx-auto my-20 bg-white p-5 box-shadow">
         <Line
           data={this.state.dataChart}
           options={{

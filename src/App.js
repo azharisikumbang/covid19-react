@@ -6,7 +6,7 @@ import Idenfitier from './components/identifier';
 import TrendDaily from './components/trend-daily';
 
 import Countries from './components/countries';
-import IdProvinces from './components/id-province';
+import IdProvinces from './components/id-province'; 
 
 import 'tailwindcss/dist/tailwind.min.css'
 
@@ -14,7 +14,7 @@ import 'tailwindcss/dist/tailwind.min.css'
 class App extends Component {
   render() {
     return (
-      <div className="App container mx-auto my-20 text-center">
+      <div className="App container px-10 mx-auto my-20 text-center">
         <h1 className="text-3xl mb-5">Covid19 Coronavirus Monitoring</h1>
         <div className="flex flex-wrap mb-4">
           <div className="w-full md:w-1/2 xl:w-1/2 p-3">

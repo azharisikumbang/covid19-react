@@ -131,7 +131,7 @@ class Countries extends Component {
 
   render() {
     return (
-      <div className="w-10/12 shadow-lg mx-auto my-20 bg-white p-5 box-shadow overflow-auto">
+      <div className="w-full shadow-lg mx-auto my-20 bg-white p-5 box-shadow overflow-auto">
         <Line
           data={this.state.dataChart}
           options={{

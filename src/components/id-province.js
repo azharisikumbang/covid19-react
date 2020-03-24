@@ -19,9 +19,9 @@ class idProvinces extends Component {
 
   render() {
     return (
-      <div className="w-10/12 shadow-lg mx-auto my-20 bg-white p-5 box-shadow overflow-auto">
+      <div className="w-full shadow-lg mx-auto my-20 bg-white p-5 box-shadow overflow-auto">
         <h3 className="text-xl mb-4">Perkembangan Covid19 Berdasarkan Wilayah</h3>
-        <table class="table-fixed border">
+        <table className="table-fixed border">
           <thead>
             <tr>
               <th className="border w-1/12 px-4 py-2">No</th>

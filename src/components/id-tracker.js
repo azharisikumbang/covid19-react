@@ -32,7 +32,7 @@ class ID extends Component {
   getDataByCountry(country){
     axios.get(`https://covid19.mathdro.id/api/countries/${country}/confirmed`)
       .then(res => {
-        if (res.data.length == 0) {
+          if (res.data.length == 0) {
           this.setState({confirmed: 0})
           this.setState({recovered: 0})
           this.setState({deaths: 0})
@@ -76,7 +76,7 @@ class ID extends Component {
         <select name="countrySelectInput" onChange={this.changeCountry}>
         {
           Object.entries(this.state.countries).map((val) => {
-            return (<option value={val[1]} selected={this.checkCountry(val[1])}>{val[0]}</option>)
+            return (<option value={val[1].iso2} selected={this.checkCountry(val[1].iso2)}>{val[1].name}</option>)
           })
         }
         </select>
